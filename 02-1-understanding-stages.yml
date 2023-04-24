@@ -28,13 +28,13 @@ stages:
     - bash: mvn -version
     - bash: ls -R $(Build.ArtifactStagingDirectory)
 
-  - task: CopyFiles@2
-    inputs:
-      SourceFolder: '$(Build.DefaultWorkingDirectory)'
-      Contents: |
-        **/*.yaml
-        **/*.tf
-      TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    - task: CopyFiles@2
+      inputs:
+        SourceFolder: '$(Build.DefaultWorkingDirectory)'
+        Contents: |
+          **/*.yaml
+          **/*.tf
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
   # - job: SecondJob
   #   steps:
   #   - bash: echo Build SecondJob
